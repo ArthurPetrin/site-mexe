@@ -1,0 +1,79 @@
+.animate-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.jumping-image {
+    width: 200px;
+    position:absolute;
+    /*Adciona a animação 'jump'*/
+    animation: jump 1s ease infinite;
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px); /*a imagem pula pra cima*/
+    }
+}
+
+/*animação em input*/
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.input-fild {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /*adiona uma transição nas propriedades border-color e transform*/
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.input-container{
+    border-color: #3498db;
+    transform: scale(1.2);
+}
+
+.image-card {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(5, 148, 243, 0.336);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: #fff;
+}
+
+.image-card:hover img{
+    transform: scale(1.1);
+}
+
+.image-card:hover .overlay{
+    opacity: 1;
+}
